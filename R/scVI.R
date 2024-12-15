@@ -75,6 +75,9 @@ scVIIntegration <- function(
   anndata <- reticulate::import("anndata", convert = FALSE)
   scipy <- reticulate::import("scipy", convert = FALSE)
 
+  ## add some setting to scvi
+  scvi.settings.num_threads = 12
+    
   # if `max_epochs` is not set
   if (is.null(max_epochs)) {
     # convert `NULL` to python's `None`
